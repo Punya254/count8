@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Morning, Paapa!</title>
+  <style>
+    body {
+      background: url('np.jpg.png') center/cover no-repeat fixed;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #3f51b5;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 25px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .morning-box {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      font-size: 1.1rem;
+    }
+    .countdown {
+      font-size: 1.4rem;
+      color: #d81b60;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 0.95rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>✡️ Good Morning, Paapa! 💙</h1>
+
+  <div class="morning-box">
+    <p>Hope you survived the boys’ night out 😆</p>
+    <p>Bet there was chaos, snacks, and zero sleep 🙄</p>
+    <p>Now it’s a new day — drink water, take it easy, and maybe sneak in a nap 🛌</p>
+    <p>Even if your brain is on low battery today,</p>
+    <p>you matter a lot to me, and I hope today treats you gently 💙</p>
+    <p>Go be your fun, kind, amazing self today ✨</p>
+  </div>
+
+  <div class="countdown" id="countdown"></div>
+
+  <div class="footer">
+    Sending good vibes and soft hugs your way ✨🙏
+  </div>
+
+  <script>
+    const birthday = new Date('July 10, 2025 00:00:00').getTime();
+    const countdownEl = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const gap = birthday - now;
+
+      const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((gap % (1000 * 60)) / 1000);
+
+      countdownEl.innerText = `🎂 ${days}d ${hours}h ${mins}m ${secs}s until your birthday!`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
